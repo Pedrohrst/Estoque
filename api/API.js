@@ -10,7 +10,7 @@ app.get('/',(req, res) => {
 
 app.get('/products', async (req, res) => {
     try{
-        const resposta = await axios.get('https://fakestoreapi.com');
+        const resposta = await axios.get('https://fakestoreapi.com/products');
         res.json(resposta.data);
     }catch(error){
         console.log("erro ao Buscar produtos: "+ error.mensagem + error.status());
