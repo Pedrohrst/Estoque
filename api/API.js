@@ -14,7 +14,6 @@ app.get('/products', async (req, res) => {
         res.json(resposta.data);
     }catch(error){
         console.log("erro ao Buscar produtos: "+ error.mensagem + error.status());
-        console.log("console");
     }
 });
 
