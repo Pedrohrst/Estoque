@@ -1,11 +1,15 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 const env = require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.get('/',(req, res) => {
-    res.send('Funcionado');
+// Habilitar o CORS para todas as origens
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Funcionando');
 });
 
 app.get('/products', async (req, res) => {
@@ -20,4 +24,4 @@ app.get('/products', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
-  });
+});

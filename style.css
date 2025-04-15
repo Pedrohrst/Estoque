@@ -1,96 +1,74 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-  
-  .container {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-  
-  .topo {
-    background-color: #00cad1;
-    width: 100%;
-  }
-  
-  .topo .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  
-  .topo-titulo a {
-    display: flex;
-  }
-  
-  .topo-logo {
-    height: 50px;
-  }
-  
-  .topo-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
-  }
-  
-  .topo-links a:hover {
-    color: #004b4c;
-  }
-  
-  .secao-produtos {
-    padding: 50px 20px;
-    background-color: #fff;
-  }
-  
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 colunas */
+  gap: 20px;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 580px;  /* Altura fixa para todos */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;  /* Controla a altura da imagem */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  word-wrap: break-word;  /* Permite quebra de linha no título, se necessário */
+  word-break: break-word; /* Faz com que palavras longas quebrem para caber na caixa */
+  text-align: center;
+  overflow-wrap: break-word;  /* Garante que o texto se ajuste sem estourar */
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1; /* Permite que o parágrafo cresça para preencher o espaço restante */
+  text-align: center;
+  overflow-wrap: break-word;  /* Garante que o texto dentro da descrição não quebre a caixa */
+}
+
+.product-card span {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Ajustes para responsividade */
+@media screen and (max-width: 1024px) {
   .products-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);  /* 4 colunas por linha */
   }
-  
-  .product-card {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px);
-    padding: 15px;
-    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);  /* 3 colunas por linha */
   }
-  
-  .product-card img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);  /* 2 colunas por linha */
   }
-  
-  .product-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .product-card p {
-    font-size: 1em;
-    color: #555;
-  }
-  
-  .product-card .price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #00cad1;
-  }
-  
-  footer {
-    background-color: #0d6e71;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
+}
