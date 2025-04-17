@@ -1,6 +1,51 @@
+*{
+  margin: 0px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*HEADER*/
+.topo {
+  background-color: #1c2c36;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.topo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topo-logo {
+  width: 90px;
+}
+
+.topo-links {
+  display: flex;
+  gap: 20px;
+}
+
+.topo-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/*Produtos*/
+/* Seção de Produtos com Imagem de Fundo */
+.secao-produtos {
+  background-image: url('./assets/back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+}
+
+/* Grade de Produtos */
 .products-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* 4 colunas */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
   justify-items: center;
   margin: 0 auto;
@@ -9,6 +54,7 @@
   width: 100%;
 }
 
+/* Cartão do Produto */
 .product-card {
   background-color: #fff;
   padding: 20px;
@@ -20,33 +66,37 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 580px;  /* Altura fixa para todos */
+  height: 580px;  
 }
 
+/* Imagem do Produto */
 .product-card img {
   width: 100%;
-  height: 200px;  /* Controla a altura da imagem */
+  height: 200px;
   object-fit: contain;
   margin-bottom: 10px;
 }
 
+/* Título do Produto */
 .product-card h3 {
   font-size: 1.1rem;
   margin: 10px 0;
-  word-wrap: break-word;  /* Permite quebra de linha no título, se necessário */
-  word-break: break-word; /* Faz com que palavras longas quebrem para caber na caixa */
+  word-wrap: break-word; 
+  word-break: break-word; 
   text-align: center;
-  overflow-wrap: break-word;  /* Garante que o texto se ajuste sem estourar */
+  overflow-wrap: break-word;  
 }
 
+/* Descrição do Produto */
 .product-card p {
   font-size: 0.95rem;
   color: #555;
-  flex-grow: 1; /* Permite que o parágrafo cresça para preencher o espaço restante */
+  flex-grow: 1; 
   text-align: center;
-  overflow-wrap: break-word;  /* Garante que o texto dentro da descrição não quebre a caixa */
+  overflow-wrap: break-word;
 }
 
+/* Preço */
 .product-card span {
   margin-top: 10px;
   font-weight: bold;
@@ -54,21 +104,89 @@
   text-align: center;
 }
 
-/* Ajustes para responsividade */
+.secao-produtos{
+  background-image: url('./assets/back.jpeg');
+}
+h2{
+  text-transform: uppercase;
+margin: auto;
+display: flex;
+justify-content: center;
+color: #1c2c36;
+font-size: 3em;
+}
+/*footer*/
+footer {
+  background-color: #1c2c36;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+footer .footer-logo {
+  flex: 1;
+}
+
+footer .footer-contato {
+  flex: 1;
+  text-align: right;
+}
+
+footer .topo-logo {
+  max-width: 150px;
+}
+
+footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-contato {
+    text-align: center;
+  }
+
+  footer .footer-contato h3 {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
+/*responsividade*/
 @media screen and (max-width: 1024px) {
   .products-list {
-    grid-template-columns: repeat(4, 1fr);  /* 4 colunas por linha */
+    grid-template-columns: repeat(4, 1fr); 
   }
 }
 
 @media screen and (max-width: 768px) {
   .products-list {
-    grid-template-columns: repeat(3, 1fr);  /* 3 colunas por linha */
+    grid-template-columns: repeat(3, 1fr);  
   }
 }
 
 @media screen and (max-width: 480px) {
   .products-list {
-    grid-template-columns: repeat(2, 1fr);  /* 2 colunas por linha */
+    grid-template-columns: repeat(2, 1fr);  
   }
 }

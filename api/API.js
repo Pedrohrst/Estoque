@@ -5,7 +5,6 @@ const env = require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Habilitar o CORS para todas as origens
 app.use(cors());
 
 app.get('/', (req, res) => {

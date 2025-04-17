@@ -2,7 +2,7 @@ function displayProducts(products) {
   const productsList = document.getElementById('products-list');
   productsList.innerHTML = '';
 
-  const limitedProducts = products.slice(0, 7);  // Pega os 7 primeiros produtos
+  const limitedProducts = products.slice(0, 8);  // Pega os 8 primeiros produtos
 
   for (let i = 0; i < limitedProducts.length; i++) {
     const product = limitedProducts[i];
@@ -26,8 +26,9 @@ function displayProducts(products) {
 
 async function fetchProducts() {
   try {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
     const apiUrl = 'https://stzcorpestoque-fcd7db50b02e.herokuapp.com/products';
+
     const response = await fetch(proxyUrl + apiUrl); 
     const data = await response.json();
     displayProducts(data);
